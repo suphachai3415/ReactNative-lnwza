@@ -1,7 +1,7 @@
 import { FontAwesome } from '@expo/vector-icons';
 import React from 'react';
 import { Text, View } from 'react-native';
-export default function Hotel() {
+export default function Section2() {
     return (
         <View style={{ padding: 20 }}>
             {/* View ก้อนที่ 1 */}
