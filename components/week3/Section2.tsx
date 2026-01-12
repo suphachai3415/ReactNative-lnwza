@@ -1,37 +1,64 @@
+import { View, Text, StyleSheet } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
-import React from 'react';
-import { Text, View } from 'react-native';
+
 export default function Section2() {
-    return (
-        <View style={{ padding: 20 }}>
-            {/* View ก้อนที่ 1 */}
-            <View style={{ marginTop: 10 }}>
-                <Text style={{ fontSize: 20 }}>Hilton San Francisco</Text>
-            </View>
+  return (
+    <View style={styles.card}>
+      
+      {/* ชื่อโรงแรม */}
+      <Text style={styles.title}>
+        Hilton San Francisco
+      </Text>
 
-            {/* View ก้อนที่ 2 */}
-            <View style={{ flexDirection: "row", justifyContent: "space-between", marginTop: 10 }}>
-                <View style={{ flexDirection: "row" }}>
-                    <FontAwesome name="star" size={20} color="orange" />
-                    <FontAwesome name="star" size={20} color="orange" />
-                    <FontAwesome name="star" size={20} color="orange" />
-                    <FontAwesome name="star" size={20} color="orange" />
-                    <FontAwesome name="star-half" size={20} color="orange" />
-                </View>
-                <View>
-                    <Text style={{ fontSize: 16, color: 'gray' }}>100 Reviews</Text>
-                </View>
-            </View>
-            {/* View ก้อนที่ 3 */}
-            <View style={{ marginTop: -25 }}>
-                <Text style={{ fontSize: 20, color: 'red' }} >Facilities provided may range from a modest quality mattress in a small room to large suites</Text>
-            </View>
+      {/* ดาว */}
+      <View style={styles.starRow}>
+        <FontAwesome name="star" size={18} color="#f5c518" />
+        <FontAwesome name="star" size={18} color="#f5c518" />
+        <FontAwesome name="star" size={18} color="#f5c518" />
+        <FontAwesome name="star" size={18} color="#f5c518" />
+        <FontAwesome name="star" size={18} color="#f5c518" />
+      </View>
 
-            <View style={{ backgroundColor: "red" }}>
-            </View>
-            <View style={{ backgroundColor: "red", marginTop: -25 }}>
-            </View>
+      {/* รายละเอียด */}
+      <Text style={styles.description}>
+        Facilities provided may range from a modest quality mattress in a small room to large suites
+      </Text>
 
-        </View>
-    );
+    </View>
+  );
 }
+
+const styles = StyleSheet.create({
+  card: {
+    flex: 1,
+    backgroundColor: '#fff',
+    marginHorizontal: 15,
+    marginTop: -30,          // 🔥 Negative margin (ทับรูป)
+    padding: 15,
+    borderRadius: 12,
+
+    // เงา (iOS)
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.2,
+    shadowRadius: 4,
+
+    // เงา (Android)
+    elevation: 4,
+  },
+  title: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    textAlign: 'center',
+  },
+  starRow: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    marginVertical: 8,
+  },
+  description: {
+    fontSize: 14,
+    textAlign: 'center',
+    color: '#555',
+  },
+});

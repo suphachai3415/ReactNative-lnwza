@@ -1,27 +1,27 @@
 import React from 'react';
-import { Image, Text, View } from 'react-native';
+import { View, Text, Image } from 'react-native';
 
-export default function Card() {
-    return (
-        <View style={{ padding: 20 }}>
-            {/* View ก้อนที่ 1 */}
-            <View style={{ flexDirection: "row", padding: 10 }}>
-                <Image 
-                    style={{ width: 50, height: 50, borderRadius: 50 / 2 }} 
-                    source={require("@/assets/week3/profile-2.jpg")} 
-                />
-                <View style={{ paddingLeft: 10 }}>
-                    <Text style={{ fontSize: 20 }}>Steve Garrett</Text>
-                    <Text style={{ color: "gray" }}>5 hours ago | 100k views</Text>
-                </View>
-            </View>
-            {/* View ก้อนที่ 2 */}
-            <View style={{ flexDirection: "row" }}>
-                <Image 
-                    style={{ flex: 1, resizeMode: "cover", aspectRatio: 4 / 2 }} 
-                    source={require("@/assets/week3/profile-3.jpg")} 
-                />
-            </View>
-        </View>
-    );
+export default function Section6() {
+  return (
+    <View style={{ margin: 20 }}>
+      <Text style={{ fontSize: 16, fontWeight: 'bold' }}>
+        Location
+      </Text>
+
+      <Text style={{ color: 'gray', marginTop: 5 }}>
+        218 Austen Mountain, consectetur adipiscing, sed do eiusmod tempor incididunt ut labore et…
+      </Text>
+
+      <View style={{ marginTop: 10 }}>
+        <Image
+          source={require('../../assets/images/map.jpg')}
+          style={{
+            width: '100%',
+            height: 150,
+            borderRadius: 10,
+          }}
+        />
+      </View>
+    </View>
+  );
 }

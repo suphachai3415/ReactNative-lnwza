@@ -1,13 +1,23 @@
-import React from 'react';
-import { Image, Text, View } from 'react-native';
-export default function Section1() {
-    return (
-        <View style={{ padding: 20 }}>
-            {/* View ก้อนที่ 1 */}
-            <View style={{ flexDirection: "row" }}>
-                <Image style={{ flex: 1, resizeMode: "cover", aspectRatio: 5 / 2, borderRadius: 20 }} source={require("@/assets/week3/room-8.jpg")} />
-            </View>
+import { View, Image, StyleSheet } from 'react-native';
 
-        </View>
-    );
+export default function Section1() {
+  return (
+    <View style={styles.container}>
+      <Image
+        source={require('../../assets/images/room-6.jpg')}
+        style={styles.image}
+      />
+    </View>
+  );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    width: '100%',
+  },
+  image: {
+    width: '100%',
+    height: 160,        // 🔥 คุมความสูง
+    resizeMode: 'cover' // ครอบภาพไม่ยืด
+  },
+});
