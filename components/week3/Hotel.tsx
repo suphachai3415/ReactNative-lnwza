@@ -26,9 +26,7 @@ export default function Hotel() {
                     <FontAwesome name="star" size={20} color="orange" />
                     <FontAwesome name="star-half" size={20} color="orange" />
                 </View>
-                <View>
-                    <Text style={{ fontSize: 16, color: 'gray' }}>100 Reviews</Text>
-                </View>
+
             </View>
             {/* View ก้อนที่ 5 */}
             <View style={{ marginTop: 10 }}>
