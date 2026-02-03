@@ -71,6 +71,11 @@ export default function Index() {
           <Text style={styles.linkText}>FlatList Example</Text>
         </Link>
 
+        <Link href="/location" style={styles.link}>
+          <Text style={styles.linkText}>Location</Text>
+        </Link>
+
+
 
 
       </View>

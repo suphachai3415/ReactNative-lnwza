@@ -3,6 +3,7 @@ import {  View,  TextInput } from "react-native";
 import MyIcon from "./MyIcon";
 
 
+
 export default function Menu() {
   return (
     <View style={{ margin : 20 , padding : 10, borderWidth : 1, borderColor : 'gray', borderRadius : 20 }}>

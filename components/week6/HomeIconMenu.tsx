@@ -1,7 +1,7 @@
-import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { View, TextInput, } from "react-native";
+import { TextInput, View, } from "react-native";
 import MyIcon from "../week3/MyIcon";
+import { Link } from "expo-router";
 
 export default function HomeIconMenu() {
     return (
@@ -12,16 +12,19 @@ export default function HomeIconMenu() {
             </View>
             {/* View ก้อนที่ 2 */}
             <View style={{ flexDirection: "row", marginTop: 10, justifyContent: "space-around" }}>
-                <MyIcon title="xxx" name="question" size={30} color="orange" />
-                <MyIcon title="xxx" name="question" size={30} color="orange" />
-                <MyIcon title="xxx" name="question" size={30} color="orange" />
-                <MyIcon title="xxx" name="question" size={30} color="orange" />
+                <MyIcon title="Flex" name="dumbbell" size={30} color="orange" />
+                <MyIcon title="Travel" name="plane" size={30} color="orange" />
+                <MyIcon title="Resort" name="hotel" size={30} color="orange" />
+                <MyIcon title="Health" name="heartbeat" size={30} color="orange" />
             </View>
             {/* View ก้อนที่ 3 */}
             <View style={{ flexDirection: "row", marginTop: 10, justifyContent: "space-around" }}>
-                <MyIcon title="xxx" name="question" size={30} color="orange" />
-                <MyIcon title="xxx" name="question" size={30} color="orange" />
-                <MyIcon title="xxx" name="question" size={30} color="orange" />
+                <MyIcon title="Pokemon" name="gamepad" size={30} color="orange" />
+                <MyIcon title="Book Store" name="book" size={30} color="orange" />
+
+                <Link href="/location" asChild>
+                    <MyIcon title="Location" name="map-marker" size={30} color="orange" />
+                </Link>
                 <MyIcon title="More" name="ellipsis-h" size={30} color="orange" />
             </View>
         </View>
