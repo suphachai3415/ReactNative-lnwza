@@ -1,18 +1,15 @@
 import React, { useEffect, useState } from "react";
-import { Text, View } from "react-native";
+import { Text, View, SafeAreaView } from "react-native"; 
 import * as Location from "expo-location";
 import { Link, Stack } from "expo-router";
 import MyMapView from "@/components/week10/MyMapView";
 
 export default function LocationScreen() {
-  const [location, setLocation] =
-    useState<Location.LocationObject | null>(null);
+  const [location, setLocation] = useState<Location.LocationObject | null>(null);
 
   const getLocation = async () => {
-    const { status } =
-      await Location.requestForegroundPermissionsAsync();
+    const { status } = await Location.requestForegroundPermissionsAsync();
     if (status !== "granted") return;
-
     const loc = await Location.getCurrentPositionAsync({});
     setLocation(loc);
   };
@@ -22,12 +19,15 @@ export default function LocationScreen() {
   }, []);
 
   return (
-    <>
+    // 1. เพิ่ม SafeAreaView ครอบชั้นนอกสุด เพื่อกันเนื้อหาไหลไปทับนาฬิกาบนหัวจอ
+    <SafeAreaView style={{ flex: 1, backgroundColor: 'white' }}> 
       <Stack.Screen
         options={{
           title: "Location",
+          headerShown: true,      // 2. มั่นใจว่าเปิด Header ไว้
+          headerLeft: () => null, // 3. *** ไฮไลท์: สั่งให้ฝั่งซ้ายเป็นว่างๆ เพื่อลบปุ่ม Back ที่พังออก ***
           headerRight: () => (
-            <Link href="/location-quiz">
+            <Link href="/location-quiz" style={{ marginRight: 15 }}>
               <Text>Quiz</Text>
             </Link>
           ),
@@ -35,7 +35,7 @@ export default function LocationScreen() {
       />
 
       <View style={{ flex: 1, flexDirection: "column" }}>
-        <Text>
+        <Text style={{ padding: 10 }}>
           {location ? new Date(location.timestamp).toString() : "-"}
         </Text>
 
@@ -79,6 +79,6 @@ export default function LocationScreen() {
           <MyMapView location={location} setLocation={setLocation} />
         </View>
       </View>
-    </>
+    </SafeAreaView>
   );
 }
